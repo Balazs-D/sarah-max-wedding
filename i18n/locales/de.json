@@ -1,0 +1,21 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "story": "Our Story",
+    "locations": "Locations",
+    "germany": "Deutschland",
+    "england": "England"
+  },
+  "home": {
+    "title": "SARAH & MAX",
+    "welcome": "Willkommen auf unserer Hochzeitsseite",
+    "phase": {
+      "before_de": "05. November 2026 • Neumarkt, Deutschland",
+      "before_en": "10. Mai 2027 • Beaminster, England",
+      "until_de": "Noch {days} Tage!",
+      "until_en": "Noch {days} Tage!",
+      "today": "Heute ist unser Hochzeitstag. Schön, dass du mit uns feierst!",
+      "after": "Danke, dass du Teil unseres Hochzeitstags warst."
+    }
+  }
+}
