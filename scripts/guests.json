@@ -1,0 +1,20 @@
+[
+  {
+    "person1FirstName": "Max",
+    "person1LastName": "Mustermann",
+    "person2FirstName": "Anna",
+    "person2LastName": "Mustermann",
+    "person3FirstName": null,
+    "person3LastName": null,
+    "pin": "4827"
+  },
+  {
+    "person1FirstName": "Jim",
+    "person1LastName": "Jarmusch",
+    "person2FirstName": "Sydney",
+    "person2LastName": "Portier",
+    "person3FirstName": "Cher",
+    "person3LastName": "Cehvron",
+    "pin": "2326"
+  }
+]

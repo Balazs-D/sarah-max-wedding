@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import CurvesIcon from '~~/components/icons/CurvesIcon.vue'
+import SeparatorHeart from '~~/components/icons/SeparatorHeart.vue'
+import Heart from '~~/components/icons/Heart.vue'
 
 interface Props {
   title: string
@@ -13,14 +14,20 @@ const { title, subtitle } = defineProps<Props>()
   <div class="content-block">
     <div class="content-block__header">
       <div class="content-block__title">
-        <CurvesIcon class="content-block__curve" />
+        <SeparatorHeart class="content-block__curve" />
+        <Heart class="content-block__heart" />
         <h2 class="content-block__title-tag">
           {{ title }}
         </h2>
-        <CurvesIcon class="content-block__curve content-block__curve--reverted" />
+        <Heart class="content-block__heart content-block__heart--reverted" />
+
+        <SeparatorHeart class="content-block__curve content-block__curve--reverted" />
       </div>
 
-      <p v-if="subtitle">
+      <p
+        v-if="subtitle"
+        class="content-block__subtitle"
+      >
         {{ subtitle }}
       </p>
     </div>
@@ -33,10 +40,11 @@ const { title, subtitle } = defineProps<Props>()
 
 <style lang="scss" scoped>
 .content-block {
+  width: 100%;
   padding-top: $space-l;
   padding-bottom: $space-l;
 
-  @include layout-container;
+  @include layout-container(false);
 
   @include lg {
     padding-top: $space-xl * 2;
@@ -50,6 +58,18 @@ const { title, subtitle } = defineProps<Props>()
     align-items: center;
   }
 
+  &__subtitle {
+    padding: $space-s 0;
+    margin: 0;
+    color: $color-text;
+    font-family: Secondary-Medium, sans-serif;
+    text-align: center;
+
+    @include lg {
+      padding: $space-xl 0;
+    }
+  }
+
   &__title {
     display: flex;
     flex-direction: row;
@@ -57,37 +77,62 @@ const { title, subtitle } = defineProps<Props>()
   }
 
   &__title-tag {
-    margin: 0 $space-s;
-    color: $color-heading;
+    margin: 0 $space-m;
+    color: $color-text;
+    text-align: center;
+    width: fit-content;
 
-    @include lg {
+    @include md {
       margin: 0 $space-xl;
     }
   }
 
   &__curve {
-    width: 75px;
+    width: 50px;
     height: auto;
     position: relative;
     bottom: 0;
-    color: $color-heading;
+    color: $color-text;
+    margin: 0 $space-m;
+    display: none;
 
     &--reverted {
       transform: scale(-1, 1);
     }
 
     @include lg {
+      display: block;
       width: 125px;
-      bottom: 8px;
+      bottom: 0;
+    }
+  }
+
+  &__heart {
+    width: 40px;
+    height: auto;
+    position: relative;
+    bottom: 0;
+    color: $color-text;
+    margin: 0 $space-m;
+
+    &--reverted {
+      transform: scale(-1, 1);
+    }
+
+    @include lg {
+      display: none;
+
+      width: 125px;
+      bottom: 0;
     }
   }
 
   &__slot {
-    padding: 0 $space-m;
+    @include layout-container;
+    padding: 0 $space-s;
 
     @include lg {
       padding: 0;
-
     }
   }
 }

@@ -22,5 +22,17 @@ p {
   margin: 0;
   padding: 0;
   color: $color-text;
+}
+
+.bold-p {
+  font-weight: 700;
+  color: $color-dark
+}
+
+h2 {
+@include md {
+  font-size: 36px;
 
 }
+}
+

@@ -2,6 +2,9 @@
 import { useWeddingPhase } from '~~/composables/useWeddingPhase.ts'
 import placeholderImage from '~/assets/images/placeholder.png'
 import ContentBlock from '~~/components/molecules/ContentBlock.vue'
+import WeddingDayPlan from '~~/components/molecules/WeddingDayPlan.vue'
+import AccomodationAndParking from '~~/components/molecules/AccomodationAndParking.vue'
+import MoreDetails from '~~/components/molecules/MoreDetails.vue'
 
 const { t } = useI18n()
 const { phase, events } = useWeddingPhase()
@@ -39,24 +42,19 @@ const { phase, events } = useWeddingPhase()
     >
   </div>
 
-  <ContentBlock :title="t('navigation.story')">
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+  <ContentBlock :title="t('weddingDayPlan.title')">
+    <WeddingDayPlan />
   </ContentBlock>
 
-  <ContentBlock :title="t('navigation.locations')">
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+  <ContentBlock
+    :title="t('accomodation.title')"
+    :subtitle="t('accomodation.intro')"
+  >
+    <AccomodationAndParking />
   </ContentBlock>
 
-  <ContentBlock :title="t('navigation.germany')">
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-  </ContentBlock>
-
-  <ContentBlock :title="t('navigation.england')">
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-  </ContentBlock>
-
-  <ContentBlock :title="t('navigation.england')">
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+  <ContentBlock :title="t('hints.title')">
+    <MoreDetails />
   </ContentBlock>
 </template>
 
@@ -67,10 +65,6 @@ const { phase, events } = useWeddingPhase()
   text-align: center;
   justify-content: center;
 
-  &__heading {
-    padding: $space-xl * 2 0;
-  }
-
   &__subtext {
     display: flex;
     flex-direction: column;
@@ -79,15 +73,6 @@ const { phase, events } = useWeddingPhase()
 
     @include lg {
       flex-direction: row;
-    }
-  }
-
-  &__event-separator {
-    border-bottom: 1px solid $color-muted;
-
-    @include lg {
-      border-bottom: 0;
-      border-right: 1px solid $color-muted;
     }
   }
 

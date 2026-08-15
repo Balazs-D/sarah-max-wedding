@@ -1,15 +1,18 @@
 @use 'breakpoints' as *;
 @use 'spacing' as *;
 
-@mixin layout-container {
+@mixin layout-container($with-max-width: true) {
   @include md {
-	padding: $space-m;
+    padding: $space-m;
   }
 
   @include lg {
-	padding: $space-l;
-	margin: auto;
-    max-width: $breakpoint-lg
+    padding: $space-l;
+
+    @if $with-max-width {
+      margin: auto;
+      max-width: $breakpoint-lg;
+    }
   }
 }
 

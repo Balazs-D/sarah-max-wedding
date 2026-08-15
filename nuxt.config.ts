@@ -12,6 +12,16 @@ export default defineNuxtConfig({
   css: [
     '~/assets/scss/main.scss',
   ],
+  runtimeConfig: {
+    supabaseSecretKey: process.env.SUPABASE_SECRET_KEY,
+
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabasePublishableKey: process.env.SUPABASE_PUBLISHABLE_KEY,
+      googleMapsApiKey: process.env.NUXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+
+    },
+  },
   compatibilityDate: '2025-07-15',
   vite: {
     css: {
@@ -27,7 +37,7 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
-        name: 'Lato',
+        name: 'Raleway',
         provider: 'local',
         weights: [400],
         styles: ['normal', 'italic'],

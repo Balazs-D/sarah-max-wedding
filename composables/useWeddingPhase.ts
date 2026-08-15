@@ -1,8 +1,8 @@
 export type WeddingPhase = 'before' | 'today' | 'after'
 
 export interface WeddingCountdownItem {
-  beforeKey: 'home.phase.before_de' | 'home.phase.before_en'
-  untilKey: 'home.phase.until_de' | 'home.phase.until_en'
+  beforeKey: 'home.phase.before_en'
+  untilKey: 'home.phase.until_en'
   daysLeft: number
 }
 
@@ -12,7 +12,6 @@ export interface WeddingPhaseInfo {
   phaseMessageKey: 'home.phase.today' | 'home.phase.after'
 }
 
-const GERMANY_WEDDING_DAY = '2026-11-05'
 const ENGLAND_WEDDING_DAY = '2027-05-10'
 const MS_PER_DAY = 1000 * 60 * 60 * 24
 
@@ -45,10 +44,9 @@ const parseWeddingDate = (value: Date | string) => {
 
 export const useWeddingPhase = (): WeddingPhaseInfo => {
   const today = toDateOnly(new Date())
-  const germanyDate = toDateOnly(parseWeddingDate(GERMANY_WEDDING_DAY))
   const englandDate = toDateOnly(parseWeddingDate(ENGLAND_WEDDING_DAY))
 
-  if (Number.isNaN(germanyDate.getTime()) || Number.isNaN(englandDate.getTime())) {
+  if (Number.isNaN(englandDate.getTime())) {
     throw new Error('Invalid wedding date configuration')
   }
 
@@ -59,14 +57,6 @@ export const useWeddingPhase = (): WeddingPhaseInfo => {
   }
 
   const events: WeddingCountdownItem[] = []
-
-  if (today.getTime() <= germanyDate.getTime()) {
-    events.push({
-      beforeKey: 'home.phase.before_de',
-      untilKey: 'home.phase.until_de',
-      daysLeft: daysUntil(germanyDate),
-    })
-  }
 
   if (today.getTime() <= englandDate.getTime()) {
     events.push({

@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import ContentBefore from '~~/components/organism/ContentBefore.vue'
+import HomeIntro from '~~/components/molecules/HomeIntro.vue'
 </script>
 
 <template>
   <main class="main">
+    <HomeIntro />
     <ContentBefore />
   </main>
 </template>
@@ -12,7 +14,8 @@ import ContentBefore from '~~/components/organism/ContentBefore.vue'
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+
   @include layout-container;
 }
 </style>

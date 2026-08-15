@@ -7,16 +7,95 @@
     "england": "England",
     "photos": "Fotos"
   },
+  "common": {
+    "buttonParking": "Parkplätze",
+    "buttonLocation": "Hochzeitsort",
+    "buttonAccommodation": "Hotels"
+  },
+  "basics": {
+    "title": "SARAH & MAX",
+    "welcome": "Willkommen auf unserer Hochzeitsseite",
+    "address": "3 Prout Bridge, Beaminster, DT8 3AY, England"
+  },
+  "rsvp": {
+    "greeting": "Hallo {name}!",
+    "intro": "Schön, dass ihr uns eure Rückmeldung gebt.",
+    "infoHint": "Eingaben bitte ganz unten mit 'Rückmeldung speichern' übermitteln.",
+    "attendance": {
+      "title": "Seid ihr dabei?",
+      "accept": "Zusage",
+      "decline": "Absage"
+    },
+    "food": {
+      "title": "Essen & Allergien",
+      "dietary": "Besondere Essenswünsche",
+      "allergies": "Allergien oder Unverträglichkeiten"
+    },
+    "accommodation": {
+      "title": "Übernachtung",
+      "label": "Wir benötigen Informationen zur Übernachtung."
+    },
+    "message": {
+      "title": "Nachricht an uns",
+      "label": "Möchtet ihr uns noch etwas mitteilen?"
+    },
+    "submit": "Rückmeldung speichern",
+    "saving": "Wird gespeichert...",
+    "success": "Vielen Dank! Eure Rückmeldung wurde gespeichert.",
+    "error": "Die Rückmeldung konnte leider nicht gespeichert werden."
+  },
   "home": {
     "title": "SARAH & MAX",
     "welcome": "Willkommen auf unserer Hochzeitsseite",
     "phase": {
-      "before_de": "05. November 2026 • Neumarkt, Deutschland",
       "before_en": "10. Mai 2027 • Beaminster, England",
-      "until_de": "Noch {days} Tage!",
       "until_en": "Noch {days} Tage!",
       "today": "Heute ist unser Hochzeitstag. Schön, dass du mit uns feierst!",
       "after": "Danke, dass du Teil unseres Hochzeitstags warst."
     }
+  },
+  "weddingDayPlan": {
+    "title": "Tagesplan",
+    "intro": "",
+    "schedule": [
+      {
+        "time": "14:00 Uhr",
+        "event": "Beginn der Feier",
+        "subtext": ""
+      },
+      {
+        "time": "",
+        "event": "Empfang mit Drinks",
+        "subtext": ""
+      },
+      {
+        "time": "",
+        "event": "Trauung und Reden",
+        "subtext": ""
+      },
+      {
+        "time": "",
+        "event": "Essen ? ? ? ",
+        "subtext": ""
+      },
+      {
+        "time": "",
+        "event": "Party",
+        "subtext": "Offenes Ende - Barbetrieb bis 02:00 Uhr"
+      }
+    ]
+  },
+  "accomodation": {
+    "title": "Parken & Übernachtung",
+    "intro": "Im Google Map unten findest du die wichtigsten Parkmöglichkeiten und Hotels in der Nähe des Veranstaltungsortes. Bitte beachte, dass wir keine Hotelzimmer reserviert haben."
+  },
+  "hints": {
+    "title": "Hinweise",
+    "intro": "",
+    "data": [
+      "Feier findet bei gutem Wetter teilweise im Garten statt.",
+      "Essen wird von einem Food Truck bereitgestellt. Neben ein Menü kann dessen Angebot genossen werden."
+
+    ]
   }
 }
