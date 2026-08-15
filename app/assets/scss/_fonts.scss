@@ -1,5 +1,6 @@
 @use 'variables' as *;
 
+
 body {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -32,7 +33,6 @@ p {
 h2 {
 @include md {
   font-size: 36px;
-
-}
+  }
 }
 

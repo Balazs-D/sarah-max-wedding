@@ -37,13 +37,18 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
-        name: 'Raleway',
+        name: 'Lato',
         provider: 'local',
         weights: [400],
         styles: ['normal', 'italic'],
       },
       {
         name: 'Paris-Forbel',
+        provider: 'local',
+        weights: [400],
+      },
+      {
+        name: 'Cheese-Milky',
         provider: 'local',
         weights: [400],
       },
