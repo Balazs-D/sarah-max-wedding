@@ -1,8 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n()
-const scheduleIndexes = [0, 1] as const
-
-const marginLefts = [2, 7, 2, 6, 7]
+const { t, tm, rt } = useI18n()
 </script>
 
 <template>
@@ -15,10 +12,9 @@ const marginLefts = [2, 7, 2, 6, 7]
     </p>
     <ul class="hints__schedule">
       <li
-        v-for="index in scheduleIndexes"
+        v-for="(item, index) in tm('hints.data')"
         :key="index"
         class="hints__item"
-        :style="{ marginLeft: `${marginLefts[index]}px` }"
       >
         <div class="hints__index-cont">
           <p class="hints__index">
@@ -27,7 +23,7 @@ const marginLefts = [2, 7, 2, 6, 7]
         </div>
 
         <p class="wedding-day-plan__text">
-          {{ t(`hints.data.${index}`) }}
+          {{ rt(item as any) }}
         </p>
       </li>
     </ul>
@@ -49,24 +45,25 @@ const marginLefts = [2, 7, 2, 6, 7]
     margin: 0;
     padding: 0;
     list-style: none;
-    gap: $space-m;
+    gap: $space-xl;
   }
 
   &__item {
     display: flex;
-    gap: $space-s;
-    align-items: center;
+    gap: $space-xl;
+    align-items: flex-start;
   }
 
   &__index-cont {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     width: 35px;
+    min-width: 35px;
     height: 35px;
     background-color: $color-pink-light;
     border-radius: 999px;
-
   }
 
   &__index {

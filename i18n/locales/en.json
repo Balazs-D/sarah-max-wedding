@@ -1,19 +1,19 @@
 {
   "navigation": {
-    "home": "Startseite",
-    "story": "Unser Story",
-    "locations": "Orte",
-    "germany": "Deutschland",
+    "home": "Home",
+    "story": "Our Story",
+    "locations": "Locations",
+    "germany": "Germany",
     "england": "England",
     "photos": "Photos"
   },
   "common": {
     "buttonParking": "Parking",
-    "buttonLocation": "Location",
+    "buttonLocation": "Venue",
     "buttonAccommodation": "Hotels"
   },
   "basics": {
-    "title": "SARAH & MAX",
+    "title": "SARAH & MAX GORE",
     "welcome": "Welcome to our wedding website",
     "address": "3 Prout Bridge, Beaminster, DT8 3AY, England"
   },
@@ -45,56 +45,55 @@
     "error": "Unfortunately your RSVP could not be saved."
   },
   "home": {
-    "title": "SARAH & MAX",
+    "title": "SARAH & MAX GORE",
     "welcome": "Welcome to our wedding website",
     "phase": {
-      "before_en": "May 10, 2027 • Beaminster, England",
+      "before_en": "5th of June, 2027 • Beaminster, England",
+      "location": "The Ollerod",
+      "location_address": "3 Prout Bridge, Beaminster, DT8 3AY, England",
       "until_en": "{days} days to go!",
       "today": "Today is our wedding day. We're so happy you're celebrating with us!",
       "after": "Thank you for being part of our wedding day."
-    }
+    },
+    "welcome_text": ["It's happening!", "We cant wait to celebrate our big day wit all of you!", "Here you will find all the information you need", "Please remember to RSVP as soon as possible.", "love, Max and Sarah"]
   },
   "weddingDayPlan": {
-    "title": "Tagesplan",
+    "title": "Wedding Day Plan",
     "intro": "",
     "schedule": [
       {
-        "time": "14:00",
-        "event": "Beginn der Feier",
+        "time": "4:00 PM",
+        "event": "Start of the celebration",
         "subtext": ""
       },
       {
         "time": "",
-        "event": "Empfang mit Drinks",
+        "event": "Welcome drinks",
         "subtext": ""
       },
       {
         "time": "",
-        "event": "Trauung und Reden",
-        "subtext": ""
-      },
-      {
-        "time": "",
-        "event": "Essen ? ? ? ",
+        "event": "Ceremony and speeches",
         "subtext": ""
       },
       {
         "time": "",
         "event": "Party",
-        "subtext": "Offenes Ende - Barbetrieb bis 02:00 Uhr"
+        "subtext": "Open end • Bar service until 02:00"
       }
     ]
   },
   "accomodation": {
-    "title": "Parken & Übernachtung",
-    "intro": "Im Google Map unten findest du die wichtigsten Parkmöglichkeiten und Hotels in der Nähe des Veranstaltungsortes. Bitte beachte, dass wir keine Hotelzimmer reserviert haben."
+    "title": "Parking & Accommodation",
+    "intro": "In the Google Map below, you can find the most important parking options and hotels near the venue. Please note that we have not reserved any hotel rooms."
   },
   "hints": {
-    "title": "Hinweise",
+    "title": "Notes",
     "intro": "",
     "data": [
-      "Feier findet bei gutem Wetter teilweise im Garten statt.",
-      "Essen wird von einem Food Truck bereitgestellt. Neben ein Menü kann dessen Angebot genossen werden."
+      "The celebration will partly take place in the garden if the weather is good.",
+      "You can expect a buffet where you can serve yourself flexibly and according to your own preferences.",
+      "Share your best moments with us: from the wedding day onward, you can upload your photos easily via QR code and password (from the invitation) on our website. After activation, you can also view everyone else's pictures."
     ]
   }
 }

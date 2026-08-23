@@ -1,8 +1,8 @@
 {
   "navigation": {
     "home": "Startseite",
-    "story": "Our Story",
-    "locations": "Locations",
+    "story": "Unsere Geschichte",
+    "locations": "Orte",
     "germany": "Deutschland",
     "england": "England",
     "photos": "Fotos"
@@ -13,7 +13,7 @@
     "buttonAccommodation": "Hotels"
   },
   "basics": {
-    "title": "SARAH & MAX",
+    "title": "SARAH & MAX GORE",
     "welcome": "Willkommen auf unserer Hochzeitsseite",
     "address": "3 Prout Bridge, Beaminster, DT8 3AY, England"
   },
@@ -45,21 +45,24 @@
     "error": "Die Rückmeldung konnte leider nicht gespeichert werden."
   },
   "home": {
-    "title": "SARAH & MAX",
+    "title": "SARAH & MAX GORE",
     "welcome": "Willkommen auf unserer Hochzeitsseite",
     "phase": {
-      "before_en": "10. Mai 2027 • Beaminster, England",
+      "before_en": "05. Juni 2027",
+      "location": "The Ollerod",
+      "location_address": "3 Prout Bridge, Beaminster, DT8 3AY, England",
       "until_en": "Noch {days} Tage!",
       "today": "Heute ist unser Hochzeitstag. Schön, dass du mit uns feierst!",
       "after": "Danke, dass du Teil unseres Hochzeitstags warst."
-    }
+    },
+    "welcome_text": ["Es ist soweit!", "Wir können es kaum erwarten, mit euch unseren großen Tag zu feiern!", "Hier findet ihr alle wichtigen Informationen.", "Bitte denkt daran, eure RSVP so schnell wie möglich zu senden.", "Liebe, Max und Sarah"]
   },
   "weddingDayPlan": {
     "title": "Tagesplan",
     "intro": "",
     "schedule": [
       {
-        "time": "14:00 Uhr",
+        "time": "16:00 Uhr",
         "event": "Beginn der Feier",
         "subtext": ""
       },
@@ -71,11 +74,6 @@
       {
         "time": "",
         "event": "Trauung und Reden",
-        "subtext": ""
-      },
-      {
-        "time": "",
-        "event": "Essen ? ? ? ",
         "subtext": ""
       },
       {
@@ -94,8 +92,8 @@
     "intro": "",
     "data": [
       "Feier findet bei gutem Wetter teilweise im Garten statt.",
-      "Essen wird von einem Food Truck bereitgestellt. Neben ein Menü kann dessen Angebot genossen werden."
-
+      "Es erwartet euch ein Büffet, bei dem ihr euch flexibel und nach eigenem Wunsch bedienen könnt.",
+      "Teilt eure schönsten Momente mit uns: Ab dem Hochzeitstag könnt ihr eure Fotos ganz unkompliziert per QR-Code und Passwort (vom Einladung) auf unserer Website hochladen. Nach der Freischaltung auch alle anderen Bilder anschauen."
     ]
   }
 }

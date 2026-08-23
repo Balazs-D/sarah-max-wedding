@@ -1,13 +1,17 @@
 <script setup lang="ts">
-const { t } = useI18n()
+import { useI18n } from 'vue-i18n'
 
-const scheduleIndexes = [0, 1, 2, 3, 4] as const
+const { t, te } = useI18n()
+
+// This drives the loop and ensures clean, safe template keys
+const scheduleIndexes = [0, 1, 2, 3] as const
 </script>
 
 <template>
   <section class="wedding-day-plan">
+    <!-- te() checks if the key exists and has content before rendering -->
     <p
-      v-if="t('weddingDayPlan.intro')"
+      v-if="te('weddingDayPlan.intro') && t('weddingDayPlan.intro')"
       class="wedding-day-plan__intro"
     >
       {{ t('weddingDayPlan.intro') }}
@@ -28,6 +32,7 @@ const scheduleIndexes = [0, 1, 2, 3, 4] as const
             {{ t(`weddingDayPlan.schedule.${index}.event`) }}
           </p>
 
+          <!-- Conditionally hides the subtext paragraph if the string is empty -->
           <p
             v-if="t(`weddingDayPlan.schedule.${index}.subtext`)"
             class="wedding-day-plan__subtext"

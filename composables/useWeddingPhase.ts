@@ -2,6 +2,8 @@ export type WeddingPhase = 'before' | 'today' | 'after'
 
 export interface WeddingCountdownItem {
   beforeKey: 'home.phase.before_en'
+  location: 'home.phase.location'
+  address: 'home.phase.location_address'
   untilKey: 'home.phase.until_en'
   daysLeft: number
 }
@@ -12,7 +14,7 @@ export interface WeddingPhaseInfo {
   phaseMessageKey: 'home.phase.today' | 'home.phase.after'
 }
 
-const ENGLAND_WEDDING_DAY = '2027-05-10'
+const ENGLAND_WEDDING_DAY = '2027-06-05'
 const MS_PER_DAY = 1000 * 60 * 60 * 24
 
 const toDateOnly = (date: Date) =>
@@ -62,6 +64,8 @@ export const useWeddingPhase = (): WeddingPhaseInfo => {
     events.push({
       beforeKey: 'home.phase.before_en',
       untilKey: 'home.phase.until_en',
+      location: 'home.phase.location',
+      address: 'home.phase.location_address',
       daysLeft: daysUntil(englandDate),
     })
   }

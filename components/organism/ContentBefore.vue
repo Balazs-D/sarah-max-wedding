@@ -6,7 +6,7 @@ import WeddingDayPlan from '~~/components/molecules/WeddingDayPlan.vue'
 import AccomodationAndParking from '~~/components/molecules/AccomodationAndParking.vue'
 import MoreDetails from '~~/components/molecules/MoreDetails.vue'
 
-const { t } = useI18n()
+const { t, tm, rt } = useI18n()
 const { phase, events } = useWeddingPhase()
 </script>
 
@@ -21,17 +21,26 @@ const { phase, events } = useWeddingPhase()
 
     <div class="content__subtext">
       <div
-        v-for="(event, number) in events"
-        :key="event.beforeKey"
+        v-if="events[0]"
         class="content__events"
       >
-        <div
-          :class="number === 0 && events.length !== 0 && 'content__event-separator'"
-          class="content__event"
-        >
-          <p>{{ t(event.beforeKey) }}</p>
-          <p>{{ t(event.untilKey, { days: event.daysLeft }) }}</p>
+        <div class="content__event">
+          <p>{{ t(events[0].beforeKey) }}</p>
+          <p>{{ t(events[0].untilKey, { days: events[0].daysLeft }) }}</p>
         </div>
+        <a
+          href="https://theollerod.co.uk/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="content__location"
+        >
+          <h3>
+            {{ t(events[0].location) }}
+          </h3>
+        </a>
+        <p class="content__location-address">
+          {{ t(events[0].address) }}
+        </p>
       </div>
     </div>
 
@@ -40,6 +49,15 @@ const { phase, events } = useWeddingPhase()
       alt="Placeholder"
       class="content__image"
     >
+
+    <div class="content__welcome-text">
+      <p
+        v-for="(line, index) in tm('home.welcome_text')"
+        :key="`welcome-line-${index}`"
+      >
+        {{ rt(line as any) }}
+      </p>
+    </div>
   </div>
 
   <ContentBlock :title="t('weddingDayPlan.title')">
@@ -100,7 +118,42 @@ const { phase, events } = useWeddingPhase()
 
     @include lg {
       width: 50%;
+    }
+  }
 
+  &__location {
+    color: $color-text;
+
+    h3 {
+      margin: 0;
+    }
+
+    &:hover {
+      color: $color-pink-dark;
+    }
+  }
+
+  &__welcome-text {
+    padding: $space-xl 0;
+    gap: $space-s;
+    display: flex;
+    flex-direction: column;
+
+    & :nth-child(1) {
+      font-family: 'Paris-Forbel', sans-serif;
+      font-size:$text-xl;
+      font-weight: bold;
+      padding: $space-xl 0;
+    }
+
+    & :nth-last-child(1) {
+      font-size: $text-l;
+      font-weight: bold;
+      padding: $space-xl 0;
+    }
+
+    & > p {
+      margin: 0;
     }
   }
 }
