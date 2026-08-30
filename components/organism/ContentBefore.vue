@@ -20,11 +20,13 @@ const { phase, events } = useWeddingPhase()
     <h1 class="content__heading">
       {{ t('home.title') }}
     </h1>
-    <img
-      :src="sarahAndMaxImage"
-      alt="Sarah and Max"
-      class="content__main-image"
-    >
+    <div class="content__main-image-frame">
+      <img
+        :src="sarahAndMaxImage"
+        alt="Sarah and Max"
+        class="content__main-image"
+      >
+    </div>
     <div class="content__subtext">
       <div
         v-if="events[0]"
@@ -89,6 +91,8 @@ const { phase, events } = useWeddingPhase()
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  width: 100%;
+  overflow-x: hidden;
 
   &__heading {
     margin-bottom: $space-xl;
@@ -132,17 +136,27 @@ const { phase, events } = useWeddingPhase()
     }
   }
 
+  &__main-image-frame {
+    width: 100dvw;
+    max-width: 100%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+  }
+
   &__main-image {
-    width: 240vw;
+    width: 240%;
     max-width: none;
     height: auto;
-    margin-left: calc(50% - 120vw);
-    margin-right: calc(50% - 120vw);
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-50%);
 
     @include md {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      transform: none;
     }
   }
 

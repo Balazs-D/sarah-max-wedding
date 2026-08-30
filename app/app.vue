@@ -4,3 +4,15 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
+
+<style lang="scss">
+.nuxt-route-announcer,
+[data-nuxt-route-announcer] {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+</style>

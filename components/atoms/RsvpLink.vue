@@ -13,6 +13,8 @@ import Rsvp from '~~/components/icons/Rsvp.vue'
 
 <style lang="scss">
 .rsvp-link {
+  display: block;
+  width: min(100%, 450px);
   align-self: center;
   border: 1px solid transparent;
   background-image: radial-gradient(circle, transparent 0%, transparent 100%);
@@ -29,7 +31,7 @@ import Rsvp from '~~/components/icons/Rsvp.vue'
 
   &__image {
     display: block;
-    width: 450px;
+    width: 100%;
     height: auto;
   }
 

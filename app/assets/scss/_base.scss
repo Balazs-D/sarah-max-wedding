@@ -6,10 +6,35 @@
   box-sizing: border-box;
 }
 
+:root {
+  overflow-x: hidden;
+
+  @supports (overflow: clip) {
+    overflow-x: clip;
+  }
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+
+  @supports (overflow: clip) {
+    overflow-x: clip;
+  }
+}
+
+#__nuxt,
+#__nuxt > * {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+
+  @supports (overflow: clip) {
+    overflow-x: clip;
+  }
 }
 
 body {
@@ -21,4 +46,3 @@ body {
 textarea {
   background: white;
 }
-
