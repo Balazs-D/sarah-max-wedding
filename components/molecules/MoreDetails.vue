@@ -37,6 +37,7 @@ const { t, tm, rt } = useI18n()
   width: 100%;
   flex: 1;
   align-self: stretch;
+  padding: $space-xl 0;
 
   &__schedule {
     display: flex;
