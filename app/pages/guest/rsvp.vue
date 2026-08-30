@@ -208,6 +208,16 @@ const submitRsvp = async () => {
     saving.value = false
   }
 }
+
+const isSolo = computed(() => {
+  if (!guest.value) {
+    return false
+  }
+
+  return !guest.value.person2
+    && !guest.value.person3
+    && !guest.value.person4
+})
 </script>
 
 <template>
@@ -223,7 +233,7 @@ const submitRsvp = async () => {
       </h1>
 
       <p>
-        {{ t('rsvp.intro') }}
+        {{ isSolo ? t('rsvp.introSolo') : t('rsvp.intro') }}
       </p>
       <InfoTextBlock :text="t('rsvp.infoHint')" />
     </header>

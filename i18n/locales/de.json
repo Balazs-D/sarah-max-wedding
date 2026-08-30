@@ -22,6 +22,7 @@
   },
   "rsvp": {
     "greeting": "Hallo {name}!",
+    "introSolo": "Schön, dass du uns deine Rückmeldung gibst.",
     "intro": "Schön, dass ihr uns eure Rückmeldung gebt.",
     "infoHint": "Eingaben bitte ganz unten mit 'Rückmeldung speichern' übermitteln.",
     "attendance": {

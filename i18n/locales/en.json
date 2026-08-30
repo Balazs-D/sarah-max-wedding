@@ -22,6 +22,7 @@
   },
   "rsvp": {
     "greeting": "Hello {name}!",
+    "introSolo": "We're so glad you're sending us your RSVP.",
     "intro": "We're so glad you're sending us your RSVP.",
     "infoHint": "Please confirm your entries at the bottom with 'Save RSVP'.",
     "attendance": {
