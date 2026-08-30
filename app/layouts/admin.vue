@@ -75,6 +75,11 @@ const signOut = async () => {
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 1.5rem;
+    padding-top: 8rem;
+
+    @include lg {
+      padding-top: 1rem;
+    }
   }
 
   &__eyebrow {

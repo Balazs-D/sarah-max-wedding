@@ -236,11 +236,6 @@ if (import.meta.client) {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding-top: 8rem;
-
-  @include lg {
-    padding-top: 1rem;
-  }
 
   &__header {
     display: flex;
