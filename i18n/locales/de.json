@@ -6,8 +6,9 @@
     "germany": "Deutschland",
     "england": "England",
     "photos": "Fotos",
-    "backToHome": "Zurück zur Startseite"
-
+    "backToHome": "Zurück zur Startseite",
+    "rsvp": "RSVP",
+    "rsvpFr": "• Répondez s’il vous plaît •"
   },
   "common": {
     "buttonParking": "Parkplätze",

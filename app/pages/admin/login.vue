@@ -106,12 +106,9 @@ const signIn = async () => {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 1.5rem;
 
   &__card {
     width: min(100%, 28rem);
-    padding: 2rem;
-    border: 1px solid currentColor;
     border-radius: 1.5rem;
   }
 

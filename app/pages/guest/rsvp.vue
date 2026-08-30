@@ -465,7 +465,11 @@ const submitRsvp = async () => {
 .rsvp {
   max-width: 700px;
   margin: 0 auto;
-  padding: 4rem 1.5rem;
+  padding: 10rem 1rem 4rem 1rem;
+
+  @include lg {
+    padding: 4rem 1rem 4rem 1rem;
+  }
 
   &__header {
     margin-bottom: 3rem;

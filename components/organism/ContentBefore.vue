@@ -6,6 +6,7 @@ import ContentBlock from '~~/components/molecules/ContentBlock.vue'
 import WeddingDayPlan from '~~/components/molecules/WeddingDayPlan.vue'
 import AccomodationAndParking from '~~/components/molecules/AccomodationAndParking.vue'
 import MoreDetails from '~~/components/molecules/MoreDetails.vue'
+import RsvpLink from '~~/components/atoms/RsvpLink.vue'
 
 const { t, tm, rt } = useI18n()
 const { phase, events } = useWeddingPhase()
@@ -63,6 +64,7 @@ const { phase, events } = useWeddingPhase()
         {{ rt(line as any) }}
       </p>
     </div>
+    <RsvpLink />
   </div>
 
   <ContentBlock :title="t('weddingDayPlan.title')">
@@ -179,5 +181,6 @@ const { phase, events } = useWeddingPhase()
       margin: 0;
     }
   }
+
 }
 </style>

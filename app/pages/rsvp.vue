@@ -32,42 +32,49 @@ const login = async () => {
 <template>
   <main class="rsvp-login">
     <HomeLink />
+    <div class="rsvp-login__card">
+      <h1>{{ t('rsvpLogin.title') }}</h1>
 
-    <h1>{{ t('rsvpLogin.title') }}</h1>
-
-    <p class="rsvp-login__intro">
-      {{ t('rsvpLogin.intro') }}
-    </p>
-
-    <form @submit.prevent="login">
-      <div class="form-field rsvp-login__field">
-        <label for="pin">
-          {{ t('rsvpLogin.password') }}
-        </label>
-
-        <input
-          id="pin"
-          v-model="pin"
-          type="text"
-          autocomplete="off"
-          class="form-input rsvp-login__input"
-        >
-      </div>
-      <p
-        v-if="error"
-        class="rsvp-login__error"
-      >
-        {{ t('rsvpLogin.error') }}
+      <p class="rsvp-login__intro">
+        {{ t('rsvpLogin.intro') }}
       </p>
 
-      <button
-        type="submit"
-        :disabled="loading || !pin.trim()"
-        class="button rsvp-login__submit"
+      <form
+        class="form rsvp-login__form"
+        @submit.prevent="login"
       >
-        {{ loading ? t('rsvpLogin.loading') : t('rsvpLogin.submit') }}
-      </button>
-    </form>
+        <div class="form-field rsvp-login__field">
+          <label
+            for="pin"
+            class="form-field rsvp-login__field"
+          >
+            {{ t('rsvpLogin.password') }}
+          </label>
+
+          <input
+            id="pin"
+            v-model="pin"
+            type="text"
+            autocomplete="off"
+            class="form-input rsvp-login__input"
+          >
+        </div>
+        <p
+          v-if="error"
+          class="rsvp-login__error"
+        >
+          {{ t('rsvpLogin.error') }}
+        </p>
+
+        <button
+          type="submit"
+          :disabled="loading || !pin.trim()"
+          class="button rsvp-login__submit form-submit"
+        >
+          {{ loading ? t('rsvpLogin.loading') : t('rsvpLogin.submit') }}
+        </button>
+      </form>
+    </div>
   </main>
 </template>
 
@@ -80,9 +87,14 @@ const login = async () => {
   height: 100vh;
   gap: 4rem;
 
+  &__card {
+    width: min(100%, 28rem);
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
   &__intro {
-    width: 600px;
-    text-align: center;
+    margin: 0 0 1.5rem;
   }
 
   &__field {
