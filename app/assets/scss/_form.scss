@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+.form {
+  width: min(100%, 25rem);
+  padding: 2rem;
+  border: 1px solid $color-pink-dark;
+  border-radius: $radius-md;
+  background-image: linear-gradient(to bottom right, $color-pink-light, $color-surface);
+}
+
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-s;
+
+}
+
+.form-input {
+  padding: 0.5rem;
+  border: 1px solid $color-pink-dark;
+  border-radius: $radius-sm;
+  outline: none;
+  background: $color-surface;
+  font: inherit;
+  font-weight: 600;
+}
+
+.form-submit {
+  margin-top: 1rem;
+  background: white;
+}

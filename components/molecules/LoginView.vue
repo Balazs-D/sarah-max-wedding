@@ -21,7 +21,7 @@ const login = async () => {
     await navigateTo('/guest/rsvp')
   }
   catch {
-    error.value = 'Der PIN ist leider nicht korrekt.'
+    error.value = 'Der Code ist leider nicht korrekt.'
   }
   finally {
     loading.value = false
@@ -36,16 +36,14 @@ const login = async () => {
 
   <form @submit.prevent="login">
     <label for="pin">
-      PIN
+      Code
     </label>
 
     <input
       id="pin"
       v-model="pin"
       type="text"
-      inputmode="numeric"
-      maxlength="4"
-      autocomplete="one-time-code"
+      autocomplete="off"
     >
 
     <p
@@ -57,7 +55,8 @@ const login = async () => {
 
     <button
       type="submit"
-      :disabled="loading || pin.length !== 4"
+      :disabled="loading || !pin.trim()"
+      class="button"
     >
       {{ loading ? 'Prüfen...' : 'Weiter' }}
     </button>

@@ -1,4 +1,3 @@
-import bcrypt from 'bcryptjs'
 import { useServerSupabase } from '#server/utils/supabase'
 import { createGuestSession } from '#server/utils/guestSession'
 
@@ -6,20 +5,12 @@ export default defineEventHandler(async (event) => {
   const body = await readBody<{
     pin: string
   }>(event)
+  const invitationCode = body.pin?.trim()
 
-  console.log('LOGIN pin:', body.pin)
-
-  if (!body.pin) {
+  if (!invitationCode) {
     throw createError({
       status: 400,
-      statusText: 'PIN is required',
-    })
-  }
-
-  if (!/^\d{4}$/.test(body.pin)) {
-    throw createError({
-      status: 400,
-      statusText: 'Invalid PIN',
+      statusText: 'Invitation code is required',
     })
   }
 
@@ -47,12 +38,7 @@ export default defineEventHandler(async (event) => {
   } | null = null
 
   for (const guest of guests ?? []) {
-    const pinIsValid = await bcrypt.compare(
-      body.pin,
-      guest.pin_hash,
-    )
-
-    if (pinIsValid) {
+    if (invitationCode === guest.pin_hash) {
       matchedGuest = guest
       break
     }
@@ -61,28 +47,14 @@ export default defineEventHandler(async (event) => {
   if (!matchedGuest) {
     throw createError({
       status: 401,
-      statusText: 'Invalid PIN',
+      statusText: 'Invalid invitation code',
     })
   }
 
-  try {
-    console.log('CREATING SESSION FOR:', matchedGuest.id)
-
-    await createGuestSession(
-      event,
-      matchedGuest.id,
-    )
-
-    console.log('SESSION CREATED')
-  }
-  catch (sessionError) {
-    console.error('SESSION ERROR:', sessionError)
-
-    throw createError({
-      status: 500,
-      statusText: 'Could not create guest session',
-    })
-  }
+  await createGuestSession(
+    event,
+    matchedGuest.id,
+  )
 
   return {
     success: true,

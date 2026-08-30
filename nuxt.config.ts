@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '~/assets/scss/main.scss',
   ],
   runtimeConfig: {
+    adminEmails: process.env.ADMIN_EMAILS ?? '',
     supabaseSecretKey: process.env.SUPABASE_SECRET_KEY,
 
     public: {

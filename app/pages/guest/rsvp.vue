@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import HomeLink from '~~/components/atoms/HomeLink.vue'
 import InfoTextBlock from '~~/components/atoms/InfoTextBlock.vue'
 
 const { t } = useI18n()
@@ -19,6 +20,7 @@ type GuestSessionResponse = {
     person1: GuestPerson
     person2: GuestPerson | null
     person3: GuestPerson | null
+    person4: GuestPerson | null
   }
 }
 
@@ -26,6 +28,7 @@ type Rsvp = {
   person_1_attending: boolean | null
   person_2_attending: boolean | null
   person_3_attending: boolean | null
+  person_4_attending: boolean | null
   dietary_requirements: string | null
   allergies: string | null
   needs_accommodation: boolean
@@ -41,6 +44,7 @@ type RsvpResponse = {
 const person1Attending = ref<boolean | null>(null)
 const person2Attending = ref<boolean | null>(null)
 const person3Attending = ref<boolean | null>(null)
+const person4Attending = ref<boolean | null>(null)
 
 const dietaryRequirements = ref('')
 const allergies = ref('')
@@ -93,6 +97,9 @@ if (rsvpResponse.value?.rsvp) {
   person3Attending.value
     = rsvp.person_3_attending
 
+  person4Attending.value
+    = rsvp.person_4_attending
+
   dietaryRequirements.value
     = rsvp.dietary_requirements ?? ''
 
@@ -129,8 +136,20 @@ const canSubmit = computed(() => {
     return false
   }
 
+  if (
+    guest.value.person4
+    && person4Attending.value === null
+  ) {
+    return false
+  }
+
   return true
 })
+
+const formatGuestName = (person: GuestPerson) =>
+  [person.firstName, person.lastName]
+    .filter(Boolean)
+    .join(' ')
 
 const submitRsvp = async () => {
   if (!canSubmit.value) {
@@ -157,6 +176,11 @@ const submitRsvp = async () => {
         person_3_attending:
             guest.value?.person3
               ? person3Attending.value
+              : null,
+
+        person_4_attending:
+            guest.value?.person4
+              ? person4Attending.value
               : null,
 
         dietary_requirements:
@@ -191,6 +215,8 @@ const submitRsvp = async () => {
     v-if="guest"
     class="rsvp"
   >
+    <HomeLink />
+
     <header class="rsvp__header">
       <h1>
         {{ t('rsvp.greeting', { name: guest.person1.firstName }) }}
@@ -211,16 +237,15 @@ const submitRsvp = async () => {
 
         <article class="rsvp-person">
           <h3>
-            {{ guest.person1.firstName }}
-            {{ guest.person1.lastName }}
+            {{ formatGuestName(guest.person1) }}
           </h3>
 
           <div class="rsvp-person__options">
             <button
               type="button"
-              class="rsvp-person__option"
+              class="button rsvp-person__option"
               :class="{
-                'rsvp-person__option--active':
+                'rsvp-person__option--active rsvp-person__option--active-positive':
                   person1Attending === true,
               }"
               @click="person1Attending = true"
@@ -230,9 +255,9 @@ const submitRsvp = async () => {
 
             <button
               type="button"
-              class="rsvp-person__option"
+              class="button rsvp-person__option"
               :class="{
-                'rsvp-person__option--active':
+                'rsvp-person__option--active rsvp-person__option--active-negative':
                   person1Attending === false,
               }"
               @click="person1Attending = false"
@@ -247,16 +272,15 @@ const submitRsvp = async () => {
           class="rsvp-person"
         >
           <h3>
-            {{ guest.person2.firstName }}
-            {{ guest.person2.lastName }}
+            {{ formatGuestName(guest.person2) }}
           </h3>
 
           <div class="rsvp-person__options">
             <button
               type="button"
-              class="rsvp-person__option"
+              class="button rsvp-person__option"
               :class="{
-                'rsvp-person__option--active':
+                'rsvp-person__option--active rsvp-person__option--active-positive':
                   person2Attending === true,
               }"
               @click="person2Attending = true"
@@ -266,9 +290,9 @@ const submitRsvp = async () => {
 
             <button
               type="button"
-              class="rsvp-person__option"
+              class="button rsvp-person__option"
               :class="{
-                'rsvp-person__option--active':
+                'rsvp-person__option--active rsvp-person__option--active-negative':
                   person2Attending === false,
               }"
               @click="person2Attending = false"
@@ -283,16 +307,15 @@ const submitRsvp = async () => {
           class="rsvp-person"
         >
           <h3>
-            {{ guest.person3.firstName }}
-            {{ guest.person3.lastName }}
+            {{ formatGuestName(guest.person3) }}
           </h3>
 
           <div class="rsvp-person__options">
             <button
               type="button"
-              class="rsvp-person__option"
+              class="button rsvp-person__option"
               :class="{
-                'rsvp-person__option--active':
+                'rsvp-person__option--active rsvp-person__option--active-positive':
                   person3Attending === true,
               }"
               @click="person3Attending = true"
@@ -302,12 +325,47 @@ const submitRsvp = async () => {
 
             <button
               type="button"
-              class="rsvp-person__option"
+              class="button rsvp-person__option"
               :class="{
-                'rsvp-person__option--active':
+                'rsvp-person__option--active rsvp-person__option--active-negative':
                   person3Attending === false,
               }"
               @click="person3Attending = false"
+            >
+              {{ t('rsvp.attendance.decline') }}
+            </button>
+          </div>
+        </article>
+
+        <article
+          v-if="guest.person4"
+          class="rsvp-person"
+        >
+          <h3>
+            {{ formatGuestName(guest.person4) }}
+          </h3>
+
+          <div class="rsvp-person__options">
+            <button
+              type="button"
+              class="button rsvp-person__option"
+              :class="{
+                'rsvp-person__option--active rsvp-person__option--active-positive':
+                  person4Attending === true,
+              }"
+              @click="person4Attending = true"
+            >
+              {{ t('rsvp.attendance.accept') }}
+            </button>
+
+            <button
+              type="button"
+              class="button rsvp-person__option"
+              :class="{
+                'rsvp-person__option--active rsvp-person__option--active-negative':
+                  person4Attending === false,
+              }"
+              @click="person4Attending = false"
             >
               {{ t('rsvp.attendance.decline') }}
             </button>
@@ -390,7 +448,7 @@ const submitRsvp = async () => {
 
       <button
         type="submit"
-        class="rsvp__submit"
+        class="button rsvp__submit"
         :disabled="saving || !canSubmit"
       >
         {{
@@ -424,6 +482,7 @@ const submitRsvp = async () => {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
   }
 
   &__error,
@@ -434,14 +493,7 @@ const submitRsvp = async () => {
   &__submit {
     width: 100%;
     padding: 1rem 1.5rem;
-    border: 1px solid currentColor;
-    border-radius: 999px;
-    cursor: pointer;
-
-    &:disabled {
-      cursor: not-allowed;
-      opacity: 0.5;
-    }
+    background: $color-blue-light;
   }
 }
 
@@ -449,6 +501,7 @@ const submitRsvp = async () => {
   padding: 1.5rem;
   border: 1px solid currentColor;
   border-radius: 1rem;
+  background-image: linear-gradient(45deg, $color-surface, $color-background);
 
   h3 {
     margin: 0 0 1rem;
@@ -461,16 +514,23 @@ const submitRsvp = async () => {
   }
 
   &__option {
-    padding: 0.9rem 1rem;
-    border: 1px solid currentColor;
-    border-radius: 999px;
-    background: transparent;
-    cursor: pointer;
+    background: $color-surface;
 
     &--active {
       font-weight: 700;
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
+
+    }
+
+    &--active-positive {
+      box-shadow: inset 0 0 0 2px $color-green-dark;
+      border: 1px solid $color-green-light;
+      background: $color-green-light;
+    }
+
+    &--active-negative {
+      box-shadow: inset 0 0 0 2px $color-error;
+      border: 1px solid $color-error;
+      background: $color-pink-light;
     }
   }
 }
@@ -488,6 +548,8 @@ const submitRsvp = async () => {
     background: transparent;
     resize: vertical;
     font: inherit;
+    background-image: linear-gradient(45deg, $color-surface, $color-background);
+
   }
 }
 

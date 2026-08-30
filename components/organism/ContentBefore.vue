@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useWeddingPhase } from '~~/composables/useWeddingPhase.ts'
-import placeholderImage from '~/assets/images/placeholder.png'
+import placeholderImage from '~/assets/images/hotel.png'
+import sarahAndMaxImage from '~/assets/images/intro.png'
 import ContentBlock from '~~/components/molecules/ContentBlock.vue'
 import WeddingDayPlan from '~~/components/molecules/WeddingDayPlan.vue'
 import AccomodationAndParking from '~~/components/molecules/AccomodationAndParking.vue'
@@ -18,7 +19,11 @@ const { phase, events } = useWeddingPhase()
     <h1 class="content__heading">
       {{ t('home.title') }}
     </h1>
-
+    <img
+      :src="sarahAndMaxImage"
+      alt="Sarah and Max"
+      class="content__main-image"
+    >
     <div class="content__subtext">
       <div
         v-if="events[0]"
@@ -83,6 +88,10 @@ const { phase, events } = useWeddingPhase()
   text-align: center;
   justify-content: center;
 
+  &__heading {
+    margin-bottom: $space-xl;
+  }
+
   &__subtext {
     display: flex;
     flex-direction: column;
@@ -118,6 +127,20 @@ const { phase, events } = useWeddingPhase()
 
     @include lg {
       width: 50%;
+    }
+  }
+
+  &__main-image {
+    width: 240vw;
+    max-width: none;
+    height: auto;
+    margin-left: calc(50% - 120vw);
+    margin-right: calc(50% - 120vw);
+
+    @include md {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
     }
   }
 

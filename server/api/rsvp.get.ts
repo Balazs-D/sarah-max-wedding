@@ -12,6 +12,7 @@ export default defineEventHandler(async (event) => {
       person_1_attending,
       person_2_attending,
       person_3_attending,
+      person_4_attending,
       dietary_requirements,
       allergies,
       needs_accommodation,

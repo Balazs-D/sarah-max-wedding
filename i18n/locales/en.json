@@ -5,7 +5,8 @@
     "locations": "Locations",
     "germany": "Germany",
     "england": "England",
-    "photos": "Photos"
+    "photos": "Photos",
+    "backToHome": "Back to Home Screen"
   },
   "common": {
     "buttonParking": "Parking",
@@ -55,7 +56,7 @@
       "today": "Today is our wedding day. We're so happy you're celebrating with us!",
       "after": "Thank you for being part of our wedding day."
     },
-    "welcome_text": ["It's happening!", "We cant wait to celebrate our big day wit all of you!", "Here you will find all the information you need", "Please remember to RSVP as soon as possible.", "love, Max and Sarah"]
+    "welcome_text": ["It's happening!", "We can`t wait to celebrate our big day with all of you!", "Here you will find all the information you need", "Please remember to RSVP as soon as possible.", "love, Max and Sarah"]
   },
   "weddingDayPlan": {
     "title": "Wedding Day Plan",
@@ -95,5 +96,22 @@
       "You can expect a buffet where you can serve yourself flexibly and according to your own preferences.",
       "Share your best moments with us: from the wedding day onward, you can upload your photos easily via QR code and password (from the invitation) on our website. After activation, you can also view everyone else's pictures."
     ]
+  },
+  "rsvpLogin": {
+    "title": "Login",
+    "intro": "Please enter your password from the invitation to access your personal area.",
+    "password": "Password",
+    "submit": "Login",
+    "error": "Invalid password. Please try again.",
+    "loading": "Checking..."
+  },
+  "adminLogin": {
+    "title": "Admin Login",
+    "intro": "Please enter your email and password to access the admin area.",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Login",
+    "error": "Invalid email or password. Please try again.",
+    "loading": "Checking..."
   }
 }

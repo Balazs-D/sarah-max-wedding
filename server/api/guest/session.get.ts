@@ -29,6 +29,13 @@ export default defineEventHandler(async (event) => {
             lastName: guest.person_3_last_name,
           }
         : null,
+
+      person4: guest.person_4_first_name
+        ? {
+            firstName: guest.person_4_first_name,
+            lastName: guest.person_4_last_name,
+          }
+        : null,
     },
   }
 })

@@ -10,5 +10,6 @@ type GuestSessionResponse = {
     person1: GuestPerson
     person2: GuestPerson | null
     person3: GuestPerson | null
+    person4: GuestPerson | null
   }
 }

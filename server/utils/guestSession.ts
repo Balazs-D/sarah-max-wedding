@@ -76,7 +76,9 @@ export const getGuestSession = async (
         person_2_first_name,
         person_2_last_name,
         person_3_first_name,
-        person_3_last_name
+        person_3_last_name,
+        person_4_first_name,
+        person_4_last_name
       )
     `)
     .eq('token_hash', tokenHash)

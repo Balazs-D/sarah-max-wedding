@@ -5,7 +5,9 @@
     "locations": "Orte",
     "germany": "Deutschland",
     "england": "England",
-    "photos": "Fotos"
+    "photos": "Fotos",
+    "backToHome": "Zurück zur Startseite"
+
   },
   "common": {
     "buttonParking": "Parkplätze",
@@ -95,5 +97,22 @@
       "Es erwartet euch ein Büffet, bei dem ihr euch flexibel und nach eigenem Wunsch bedienen könnt.",
       "Teilt eure schönsten Momente mit uns: Ab dem Hochzeitstag könnt ihr eure Fotos ganz unkompliziert per QR-Code und Passwort (vom Einladung) auf unserer Website hochladen. Nach der Freischaltung auch alle anderen Bilder anschauen."
     ]
+  },
+  "rsvpLogin": {
+    "title": "Anmeldung",
+    "intro": "Bitte gib dein Passwort von der Einladung ein, um auf deinen persönlichen Bereich zuzugreifen.",
+    "password": "Passwort",
+    "submit": "Anmelden",
+    "error": "Ungültiges Passwort. Bitte versuche es erneut.",
+    "loading": "Überprüfe..."
+  },
+  "adminLogin": {
+    "title": "Admin Login",
+    "intro": "Bitte gib deine E-Mail-Adresse und dein Passwort ein, um auf den Admin-Bereich zuzugreifen.",
+    "email": "Email",
+    "password": "Passwort",
+    "submit": "Anmelden",
+    "error": "Ungültige E-Mail-Adresse oder falsches Passwort. Bitte versuche es erneut.",
+    "loading": "Überprüfe..."
   }
 }

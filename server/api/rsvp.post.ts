@@ -5,6 +5,7 @@ type RsvpBody = {
   person_1_attending: boolean | null
   person_2_attending: boolean | null
   person_3_attending: boolean | null
+  person_4_attending: boolean | null
   dietary_requirements: string | null
   allergies: string | null
   needs_accommodation: boolean
@@ -27,6 +28,7 @@ export default defineEventHandler(async (event) => {
         person_1_attending: body.person_1_attending,
         person_2_attending: body.person_2_attending,
         person_3_attending: body.person_3_attending,
+        person_4_attending: body.person_4_attending,
 
         dietary_requirements: body.dietary_requirements,
         allergies: body.allergies,
