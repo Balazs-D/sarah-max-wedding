@@ -76,7 +76,7 @@ const { t } = useI18n()
     bottom: 48%;
     left: 4%;
     transform: scale(-1, 1) translate(0%, 50%);
-    width: 200px;
+    width: 190px;
     height: auto;
     position: absolute;
     color: $color-text;
