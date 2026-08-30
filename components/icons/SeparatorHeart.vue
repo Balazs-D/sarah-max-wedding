@@ -23,8 +23,6 @@ const props = withDefaults(defineProps<{
 
 <style lang="scss" scoped>
 .separator-heart {
-  width: 100%;
-  height: 100%;
   fill: currentColor;
 }
 </style>

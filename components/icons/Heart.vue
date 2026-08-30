@@ -23,8 +23,6 @@ const props = withDefaults(defineProps<{
 
 <style scoped lang="scss">
 .heart-icon {
-  width: 100%;
-  height: 100%;
   fill: currentColor;
 }
 </style>
