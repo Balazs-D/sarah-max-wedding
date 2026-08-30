@@ -243,7 +243,7 @@ const isSolo = computed(() => {
       @submit.prevent="submitRsvp"
     >
       <section class="rsvp__section">
-        <h2>{{ t('rsvp.attendance.title') }}</h2>
+        <h2>{{ isSolo ? t('rsvp.attendance.titleSolo') : t('rsvp.attendance.title') }}</h2>
 
         <article class="rsvp-person">
           <h3>
@@ -421,7 +421,7 @@ const isSolo = computed(() => {
           >
 
           <span>
-            {{ t('rsvp.accommodation.label') }}
+            {{ isSolo ? t('rsvp.accommodation.labelSolo') : t('rsvp.accommodation.label') }}
           </span>
         </label>
       </section>
@@ -431,7 +431,7 @@ const isSolo = computed(() => {
 
         <div class="rsvp-field">
           <label for="message">
-            {{ t('rsvp.message.label') }}
+            {{ isSolo ? t('rsvp.message.labelSolo') : t('rsvp.message.label') }}
           </label>
 
           <textarea

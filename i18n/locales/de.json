@@ -27,6 +27,7 @@
     "infoHint": "Eingaben bitte ganz unten mit 'Rückmeldung speichern' übermitteln.",
     "attendance": {
       "title": "Seid ihr dabei?",
+      "titleSolo": "Bist du dabei?",
       "accept": "Zusage",
       "decline": "Absage"
     },
@@ -37,10 +38,12 @@
     },
     "accommodation": {
       "title": "Übernachtung",
+      "labelSolo": "Ich benötige Informationen zur Übernachtung.",
       "label": "Wir benötigen Informationen zur Übernachtung."
     },
     "message": {
       "title": "Nachricht an uns",
+      "labelSolo": "Möchtest du uns noch etwas mitteilen?",
       "label": "Möchtet ihr uns noch etwas mitteilen?"
     },
     "submit": "Rückmeldung speichern",

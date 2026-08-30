@@ -27,6 +27,7 @@
     "infoHint": "Please confirm your entries at the bottom with 'Save RSVP'.",
     "attendance": {
       "title": "Will you be joining us?",
+      "titleSolo": "Will you be joining us?",
       "accept": "Attending",
       "decline": "Not attending"
     },
@@ -37,10 +38,12 @@
     },
     "accommodation": {
       "title": "Accommodation",
+      "labelSolo": "I need information about accommodation options.",
       "label": "We need information about accommodation options."
     },
     "message": {
       "title": "Message to us",
+      "labelSolo": "Is there anything else you'd like to tell us?",
       "label": "Is there anything else you'd like to tell us?"
     },
     "submit": "Save RSVP",
