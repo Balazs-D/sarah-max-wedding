@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useWeddingPhase } from '~~/composables/useWeddingPhase.ts'
 import placeholderImage from '~/assets/images/hotel.png'
-import sarahAndMaxImage from '~/assets/images/intro.png'
+import sarahAndMaxImage from '~/assets/images/intro.jpeg'
 import ContentBlock from '~~/components/molecules/ContentBlock.vue'
 import WeddingDayPlan from '~~/components/molecules/WeddingDayPlan.vue'
 import AccomodationAndParking from '~~/components/molecules/AccomodationAndParking.vue'
