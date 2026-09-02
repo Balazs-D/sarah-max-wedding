@@ -8,7 +8,8 @@
     "photos": "Fotos",
     "backToHome": "Zurück zur Startseite",
     "rsvp": "RSVP",
-    "rsvpFr": "• Répondez s’il vous plaît •"
+    "rsvpFr": "• Répondez s’il vous plaît •",
+    "rsvpLabel": "Rückmeldung geben"
   },
   "common": {
     "buttonParking": "Parkplätze",

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Rsvp from '~~/components/icons/Rsvp.vue'
+const { t } = useI18n()
 </script>
 
 <template>
@@ -7,7 +7,9 @@ import Rsvp from '~~/components/icons/Rsvp.vue'
     class="rsvp-link"
     to="/rsvp"
   >
-    <Rsvp class="rsvp-link__image" />
+
+    {{ t('navigation.rsvpLabel') }}
+    <!--    <Rsvp class="rsvp-link__image" /> -->
   </NuxtLink>
 </template>
 
@@ -16,27 +18,25 @@ import Rsvp from '~~/components/icons/Rsvp.vue'
   display: block;
   width: min(100%, 450px);
   align-self: center;
-  border: 1px solid transparent;
-  background-image: radial-gradient(circle, transparent 0%, transparent 100%);
   font-family: 'Paris-Forbel', sans-serif;
   color: $color-text;
-  text-decoration: underline;
   border-radius: $radius-md;
+  background-image: radial-gradient(circle, $color-surface 15%, transparent 90%);
+  border: 1px solid $color-pink-dark;
+  padding: $space-m;
+  box-shadow: inset 0 0 10px $color-pink-light, 2px 0 20px $color-pink-dark;
+  margin-bottom: $space-xl;
+  transition: all 0.2s ease-in-out;
+
+  justify-content: center;
+  text-align: center;
 
   &:hover {
-    background-image: radial-gradient(circle, $color-pink-light 15%, transparent 90%);
-    border: 1px solid $color-pink-dark;
-
-  }
-
-  &__image {
-    display: block;
-    width: 100%;
-    height: auto;
+    text-decoration: underline;
+    box-shadow: inset 0 0 50px $color-pink-light, 2px 0 10px $color-pink-dark;
   }
 
   &:hover {
-    color: $color-pink-dark;
     cursor: pointer;
   }
 
