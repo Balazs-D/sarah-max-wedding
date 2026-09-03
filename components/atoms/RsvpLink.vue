@@ -16,24 +16,24 @@ const { t } = useI18n()
 <style lang="scss">
 .rsvp-link {
   display: block;
-  width: min(100%, 450px);
+
+  width: min(80%, 450px);
   align-self: center;
   font-family: 'Paris-Forbel', sans-serif;
-  color: $color-text;
+  color: $color-dark;
   border-radius: $radius-md;
-  background-image: radial-gradient(circle, $color-surface 15%, transparent 90%);
+  background-image: radial-gradient(circle, $color-pink-light 15%, $color-pink-light 90%);
   border: 1px solid $color-pink-dark;
   padding: $space-m;
-  box-shadow: inset 0 0 10px $color-pink-light, 2px 0 20px $color-pink-dark;
+  box-shadow: 0 0 0 $color-pink-dark;
   margin-bottom: $space-xl;
   transition: all 0.2s ease-in-out;
-
   justify-content: center;
   text-align: center;
 
   &:hover {
     text-decoration: underline;
-    box-shadow: inset 0 0 50px $color-pink-light, 2px 0 10px $color-pink-dark;
+    box-shadow: 0 0 10px $color-pink-dark;
   }
 
   &:hover {
